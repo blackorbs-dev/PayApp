@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2024 BlackOrbs (blackorbs@icloud.com)
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~       https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License
+  -->
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/purple_700"
+    app:cardCornerRadius="@dimen/standard_20"
+    app:cardUseCompatPadding="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/standard_20">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Jamiu Abiodun Akinyemi"
+            android:gravity="center_horizontal"
+            style="@style/LabelText"
+            android:textSize="18sp"
+            app:textAllCaps="true"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/balance_label"
+            style="@style/LabelText"
+            android:layout_marginTop="@dimen/standard_10"
+            android:text="@string/label_balance"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/balance"
+            style="@style/LabelText"
+            android:textStyle="bold"
+            tools:text="5,000"
+            android:drawableStart="@drawable/naira_white"
+            android:drawablePadding="@dimen/standard_5"
+            android:textSize="18sp"
+            android:layout_marginTop="@dimen/standard_5"
+            app:layout_constraintTop_toBottomOf="@+id/balance_label"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/status_label"
+            style="@style/LabelText"
+            android:text="@string/label_status"
+            app:layout_constraintTop_toTopOf="@+id/balance_label"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/status"
+            style="@style/LabelText"
+            tools:text="Active"
+            android:textSize="15sp"
+            android:layout_marginTop="@dimen/standard_5"
+            app:layout_constraintTop_toBottomOf="@+id/status_label"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_no_label"
+            style="@style/LabelText"
+            android:text="@string/label_account_no"
+            android:layout_marginTop="@dimen/standard_20"
+            app:layout_constraintTop_toBottomOf="@+id/balance"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/account_no"
+            style="@style/LabelText"
+            tools:text="0245552162"
+            android:textSize="16sp"
+            android:layout_marginTop="@dimen/standard_5"
+            app:layout_constraintTop_toBottomOf="@+id/account_no_label"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/type_label"
+            style="@style/LabelText"
+            android:text="@string/label_type"
+            app:layout_constraintTop_toTopOf="@+id/account_no_label"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/type"
+            style="@style/LabelText"
+            tools:text="Domiciliary Account"
+            android:textSize="15sp"
+            android:layout_marginTop="@dimen/standard_5"
+            app:layout_constraintTop_toBottomOf="@+id/type_label"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

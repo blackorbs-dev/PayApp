@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2024 BlackOrbs (blackorbs@icloud.com)
+  ~
+  ~  Licensed under the Apache License, Version 2.0 (the "License");
+  ~  you may not use this file except in compliance with the License.
+  ~  You may obtain a copy of the License at
+  ~
+  ~       https://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~  Unless required by applicable law or agreed to in writing, software
+  ~  distributed under the License is distributed on an "AS IS" BASIS,
+  ~  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  See the License for the specific language governing permissions and
+  ~  limitations under the License
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/standard_10">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <blackorbs.dev.payapp.ui.main.transfer.SelectorTextView
+                android:id="@+id/select_source"
+                style="@style/SelectTextViewStyle"
+                android:text="@string/select_source_account" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <include
+            android:id="@+id/source_account"
+            tools:visibility="visible"
+            android:visibility="gone"
+            layout="@layout/account_item"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/standard_10">
+            <blackorbs.dev.payapp.ui.main.transfer.SelectorTextView
+                android:id="@+id/select_destination"
+                style="@style/SelectTextViewStyle"
+                android:text="@string/select_destination_account" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <include
+            android:id="@+id/destination_account"
+            tools:visibility="visible"
+            android:visibility="gone"
+            layout="@layout/account_item"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/standard_10">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/amount"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="number"
+                android:hint="@string/enter_amount"
+                android:drawablePadding="@dimen/standard_10"
+                android:drawableStart="@drawable/naira_black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:visibility="visible"
+            android:visibility="gone"
+            tools:text="Amount can not be greater than source account balance"
+            android:textColor="@color/pink"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/proceed_btn"
+            tools:enabled="true"
+            android:enabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/standard_50"
+            android:text="@string/button_proceed"
+            android:textSize="16sp"
+            android:layout_marginTop="@dimen/standard_20"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

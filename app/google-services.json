@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1011763698464",
+    "project_id": "payapp-3",
+    "storage_bucket": "payapp-3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1011763698464:android:2983ad4e8ad757859c5545",
+        "android_client_info": {
+          "package_name": "blackorbs.dev.payapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBq05TnolRp8qcoS9AAC7DAAQBX_HRUAdk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
