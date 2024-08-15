@@ -39,7 +39,6 @@ import org.junit.Test
 @OptIn(ExperimentalCoroutinesApi::class)
 @SmallTest
 class ViewModelsTest {
-
     @get:Rule
     var instantExecutorRule = InstantTaskExecutorRule()
 
