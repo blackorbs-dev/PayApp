@@ -19,7 +19,6 @@ package blackorbs.dev.payapp.ui
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.filters.SmallTest
 import blackorbs.dev.payapp.entities.Account
-import blackorbs.dev.payapp.entities.AccountType
 import blackorbs.dev.payapp.entities.Transaction
 import blackorbs.dev.payapp.ui.main.accounts.AccountsViewModel
 import blackorbs.dev.payapp.ui.main.history.HistoryViewModel
@@ -46,8 +45,7 @@ class ViewModelsTest {
     var coroutineRule = MainCoroutineRule()
 
     private val testAccounts = listOf(
-        Account("Jamiu Abiodun",150000, "0245552162", AccountType.Savings),
-        Account("AbdulRoqeeb Soliu Ade",250000, "0703346489"),
+        Account("Jamiu Abiodun",150000, "0245552162"),
         Account("Maryam Musbahudeen",500000, "1725373405"),
         Account("Mustapha Olanrewaju",1350000, "8168156922")
     )
@@ -57,7 +55,7 @@ class ViewModelsTest {
     private var transferViewModel = TransferViewModel()
 
     @Test
-    fun `transfer page viewModel test successful`() = runTest{
+    fun `transfer page viewModel test successful`(){
         val source = testAccounts[2]
         val dest = testAccounts[1]
 

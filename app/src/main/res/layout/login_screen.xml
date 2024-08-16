@@ -29,16 +29,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_welcome"
+        android:textStyle="bold"
         android:layout_marginBottom="@dimen/standard_20"
-        android:textColor="@color/black"
+        android:textColor="?colorOnSecondary"
         android:textSize="22sp"/>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:strokeColor="@color/purple_700"
-        app:strokeWidth="2dp"
+        app:strokeColor="?colorPrimaryVariant"
+        app:strokeWidth="3dp"
         app:cardCornerRadius="@dimen/standard_20"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -46,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/standard_10"
-            android:background="@color/purple_light">
+            android:background="?android:windowBackground">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/email_cont"

@@ -34,7 +34,7 @@
         android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center"
-        android:background="@color/teal_700"
+        android:background="?colorSecondaryVariant"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="@string/transfer_success"
         android:textSize="16sp"
-        android:textColor="@color/black"
+        android:textColor="?colorOnSecondary"
         android:layout_marginTop="@dimen/standard_20"
         android:layout_gravity="center_horizontal"
         android:gravity="center"
@@ -64,10 +64,10 @@
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:text="@string/button_okay"
         android:textSize="16sp"
-        android:textColor="@color/teal_700"
+        android:textColor="?colorSecondaryVariant"
         android:layout_margin="@dimen/standard_20"
         app:strokeWidth="3dp"
-        app:strokeColor="@color/teal_700"
+        app:strokeColor="?colorSecondaryVariant"
         app:layout_constraintTop_toBottomOf="@+id/source_account"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

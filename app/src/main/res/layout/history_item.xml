@@ -23,7 +23,7 @@
         android:animateLayoutChanges="true"
         android:layout_margin="@dimen/standard_5"
         app:cardCornerRadius="@dimen/standard_10"
-        app:strokeColor="@color/purple_700"
+        app:strokeColor="?colorPrimaryVariant"
         app:strokeWidth="1dp">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                 android:paddingStart="@dimen/standard_5"
                 android:paddingEnd="@dimen/standard_5"
                 android:textSize="12sp"
-                android:textColor="@color/white"
+                android:textColor="?colorOnPrimary"
                 android:background="@drawable/time_back"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
@@ -68,7 +68,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 tools:text="trf from jamiu akinyemi to sodeeq akinyemi | kayftech to pay"
-                android:textColor="@color/black"
+                android:textColor="?colorOnSecondary"
                 android:textSize="15sp"
                 app:textAllCaps="true"
                 android:layout_marginBottom="@dimen/standard_20"
@@ -86,7 +86,7 @@
                 android:textSize="18sp"
                 tools:text="40,000"
                 android:textStyle="bold"
-                android:textColor="@color/purple_700"
+                android:textColor="?colorPrimaryVariant"
                 android:gravity="center_vertical"
                 android:layout_marginEnd="@dimen/standard_5"
                 android:layout_marginBottom="@dimen/standard_5"
