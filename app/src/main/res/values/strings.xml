@@ -38,7 +38,7 @@
     <string name="button_login">Login</string>
     <string name="label_email">Email</string>
     <string name="label_password">Password</string>
-    <string name="title_welcome">Welcome back</string>
+    <string name="title_welcome">Sign in to continue</string>
     <string name="title_success">Success</string>
     <string name="transfer_success">Your transfer was completed successfully!</string>
     <string name="button_okay">Okay</string>

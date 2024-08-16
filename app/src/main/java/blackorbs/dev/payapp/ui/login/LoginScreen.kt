@@ -27,6 +27,8 @@ import blackorbs.dev.payapp.databinding.LoginScreenBinding
 import blackorbs.dev.payapp.ui.main.MainScreen
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import java.lang.Exception
 
 class LoginScreen : AppCompatActivity() {
     private lateinit var binding : LoginScreenBinding
@@ -39,7 +41,7 @@ class LoginScreen : AppCompatActivity() {
         binding = LoginScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
         firebaseAuth = FirebaseAuth.getInstance()
-        firebaseAuth.currentUser?.let { startActivity(Intent(this, MainScreen::class.java)) }
+        firebaseAuth.currentUser?.let { openMainScreen() }
         binding.loginBtn.setOnClickListener { logInUser() }
         Handler(Looper.getMainLooper()).postDelayed({keep = false}, 1000)
     }
@@ -55,22 +57,40 @@ class LoginScreen : AppCompatActivity() {
                 binding.loading.show()
                 firebaseAuth.createUserWithEmailAndPassword(
                     email.toString(), password.toString()
-                ).addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        startActivity(Intent(this, MainScreen::class.java))
-                    } else {
-                        binding.loginBtn.isEnabled = true
-                        binding.loading.hide()
-                        Snackbar.make(
-                            binding.root,
-                            if(it.exception == null) getString(R.string.login_failed)
-                            else it.exception!!.localizedMessage,
-                            Snackbar.LENGTH_LONG
-                        ).show()
+                ).addOnCompleteListener { createTask ->
+                    if (createTask.isSuccessful) {
+                        openMainScreen()
+                    }
+                    else if(createTask.exception is FirebaseAuthUserCollisionException){
+                        firebaseAuth.signInWithEmailAndPassword(email.toString(), password.toString()).addOnCompleteListener{signInTask ->
+                            if(signInTask.isSuccessful){
+                                openMainScreen()
+                            }
+                            else showFeedback(signInTask.exception)
+                        }
+                    }
+                    else {
+                        showFeedback(createTask.exception)
                     }
                 }
             }
         }
+    }
+
+    private fun openMainScreen() {
+        startActivity(Intent(this, MainScreen::class.java))
+        finish()
+    }
+
+    private fun showFeedback(exception: Exception?){
+        binding.loginBtn.isEnabled = true
+        binding.loading.hide()
+        Snackbar.make(
+            binding.root,
+            if(exception == null) getString(R.string.login_failed)
+            else exception.localizedMessage,
+            6000
+        ).show()
     }
 
 }
