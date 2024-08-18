@@ -108,23 +108,20 @@ class TransferPage : Fragment() {
     }
 
     private fun handleInputError(){
-        val text = binding!!.amount.text?.toString()
-        val amount = if(text?.isBlank() == true) 0 else text?.toLong()
         val account = viewModel.sourceAccount.value
-        val amountOK = if(amount != null) {
-            when{
-                amount <= 0L -> {
-                    binding!!.error.text = getString(R.string.zero_input_error)
-                    false
-                }
-                account != null && amount > account.balance -> {
-                    binding!!.error.text = getString(R.string.insufficient_bal_error)
-                    false
-                }
-                else -> true
+        val text = binding!!.amount.text?.toString()
+        val amount = if(text.isNullOrEmpty()) -1 else text.toLong()
+        val amountOK = when{
+            amount <= 0L -> {
+                binding!!.error.text = getString(R.string.zero_input_error)
+                false
             }
-
-        } else false
+            account != null && amount > account.balance -> {
+                binding!!.error.text = getString(R.string.insufficient_bal_error)
+                false
+            }
+            else -> true
+        }
         binding!!.error.isVisible = !text.isNullOrBlank() && !amountOK
         binding!!.proceedBtn.isEnabled = amountOK && account != null && viewModel.destinationAccount.value != null
     }

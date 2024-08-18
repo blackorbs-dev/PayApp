@@ -46,7 +46,7 @@
     <string name="status_closed">Closed</string>
     <string name="type_savings">Premier Savings</string>
     <string name="type_current">Current Account</string>
-    <string name="same_account_error">Source and destination can not be the same, please try again</string>
+    <string name="same_account_error">Source and destination accounts can not be the same, please try again</string>
     <string name="zero_input_error">Amount must be greater than 0</string>
     <string name="insufficient_bal_error">Amount can not be greater than source account balance</string>
     <string name="transaction_details">TRF %1$d From %2$s To %3$s</string>
